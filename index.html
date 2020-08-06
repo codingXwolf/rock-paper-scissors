@@ -12,17 +12,46 @@
         // your code here!
 
         //computer will choose random RPS
-        let RPS = ["rock", "paper", "scissors"];
+        let RPS = [
+            {
+                choice: "rock",
+                level: 0
+            },
+            {
+                choice: "paper",
+                level: 1
+            },
+            {
+                choice: "scissors",
+                level: 2
+            },
+        ];
+        let result;
 
         const computerPlay = () => {
          return RPS[Math.floor(Math.random() * RPS.length)];
         }
 
+        if(playerSelection === computerSelection) {
+            result = 'Draw';
+
+        //computer wins
+        } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+            console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
+
+        } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+           console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
+
+        } else {
+            console.log('Please select rock, paper, or scissors.')
+        }
 
       }
 
       const playerSelection = "rock";
       const computerSelection = computerPlay();
+      
+      console.log('selections',playerSelection, computerSelection);
       console.log(playRound(playerSelection, computerSelection));
     </script>
   </body>
