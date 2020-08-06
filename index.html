@@ -7,20 +7,18 @@
   </head>
 
   <body>
-    <script>                    
-      const playRound = (playerSelection) => {
-        // your code here!
-
-        let RPS = ["rock", "paper", "scissors"];
-        let result;
-
+    <script>    
         //computer will choose random RPS
+        let RPS = ["rock", "paper", "scissors"];
         const computerPlay = () => {
-         return RPS[Math.floor(Math.random() * RPS.length)];
+            return RPS[Math.floor(Math.random() * RPS.length)];
         }
 
+      const playRound = (playerSelection, computerSelection) => {
+        // your code here!
+
         if(playerSelection === computerSelection) {
-            result = 'Draw';
+            console.log('Draw');
 
         //computer wins rock vs paper
         } else if (computerSelection === 'paper' && playerSelection === 'rock') {
@@ -51,10 +49,10 @@
 
       }
 
-      const playerSelection = "rock";
+      const playerSelection = "paper";
       const computerSelection = computerPlay();
       
-      console.log('selections',playerSelection, computerSelection);
+      console.log(`Selections player ${playerSelection} computer ${computerSelection}`);
       console.log(playRound(playerSelection, computerSelection));
     </script>
   </body>
