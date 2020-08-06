@@ -8,26 +8,13 @@
 
   <body>
     <script>                    
-      const playRound = (playerSelection, computerSelection) => {
+      const playRound = (playerSelection) => {
         // your code here!
 
-        //computer will choose random RPS
-        let RPS = [
-            {
-                choice: "rock",
-                level: 0
-            },
-            {
-                choice: "paper",
-                level: 1
-            },
-            {
-                choice: "scissors",
-                level: 2
-            },
-        ];
+        let RPS = ["rock", "paper", "scissors"];
         let result;
 
+        //computer will choose random RPS
         const computerPlay = () => {
          return RPS[Math.floor(Math.random() * RPS.length)];
         }
@@ -35,15 +22,31 @@
         if(playerSelection === computerSelection) {
             result = 'Draw';
 
-        //computer wins
-        } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        //computer wins rock vs paper
+        } else if (computerSelection === 'paper' && playerSelection === 'rock') {
             console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
 
-        } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-           console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
+        //player wins
+        } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+           console.log(`You win! ${playerSelection} beats ${computerSelection}`);
 
+        //computer wins paper vs scissors
+        } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
+            console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
+
+        //player wins
+        } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+            console.log(`You wins! ${playerSelection} beats ${computerSelection}`);
+        
+        //computer wins rock vs scissors
+        } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
+            console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
+        
+        // player wins
+        } else if(playerSelection === 'rock' && computerSelection === 'scissors') {
+            console.log(`You wins! ${playerSelection} beats ${computerSelection}`);
         } else {
-            console.log('Please select rock, paper, or scissors.')
+            console.log('Please select rock, paper, scissors')
         }
 
       }
