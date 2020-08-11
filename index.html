@@ -60,7 +60,7 @@
             console.log(`You wins! ${playerSelection} beats ${computerSelection}`);
             console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            return `You wins! ${playerSelection} beats ${computerSelection}`;
+            return `You win! ${playerSelection} beats ${computerSelection}`;
         
         //computer wins rock vs scissors
         } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
@@ -76,25 +76,18 @@
             console.log(`You wins! ${playerSelection} beats ${computerSelection}`);
             console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            return `You wins! ${playerSelection} beats ${computerSelection}`;
+            return `You win! ${playerSelection} beats ${computerSelection}`;
 
         } else {
             console.log('Please select rock, paper, or scissors')
             return 'Please select rock, paper, or scissors'
         }
 
-        if(playerScore === 5) {
-          return prompt('YOU WIN!');
-        }
-
-        if(computerScore === 5) {
-          return prompt('COMPUTER WINS!');
-        }
-
       }
-
       
+
       console.log(playRound(playerSelection, computerSelection));
+
     </script>
   </body>
 </html>
