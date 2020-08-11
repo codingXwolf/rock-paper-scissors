@@ -8,45 +8,74 @@
 
   <body>
     <script>
+      let playerScore = 0;
+      let computerScore = 0;
+
         //computer will choose RPS at random
         let RPS = ["rock", "paper", "scissors"];
         const computerPlay = () => {
             return RPS[Math.floor(Math.random() * RPS.length)];
         }
         const computerSelection = computerPlay();
+        const playerSelection = prompt('Rock, Paper, or Scissors?');
 
       const playRound = (playerSelection, computerSelection) => {
         // your code here!
         
         if(playerSelection === computerSelection) {
             console.log('Draw');
+            ++playerScore;
+            ++computerScore;
+            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+
             return 'Draw';
 
         //computer wins rock vs paper
         } else if (computerSelection === 'paper' && playerSelection === 'rock') {
+            ++computerScore;
             console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
+            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+
+            return `computer wins! ${computerSelection} beats ${playerSelection}`;
 
         //player wins
         } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-           console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+           ++playerScore;
+          console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+          console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+
+           return `You win! ${playerSelection} beats ${computerSelection}`;
 
         //computer wins paper vs scissors
         } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
+            ++computerScore;
             console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
+            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+
+            return `computer wins! ${computerSelection} beats ${playerSelection}`;
 
         //player wins
         } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+            ++playerScore;
             console.log(`You wins! ${playerSelection} beats ${computerSelection}`);
+            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+
             return `You wins! ${playerSelection} beats ${computerSelection}`;
         
         //computer wins rock vs scissors
         } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
+            ++computerScore;
             console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
+            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+
             return `computer wins! ${computerSelection} beats ${playerSelection}`;
         
         // player wins
         } else if(playerSelection === 'rock' && computerSelection === 'scissors') {
+            ++playerScore;
             console.log(`You wins! ${playerSelection} beats ${computerSelection}`);
+            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+
             return `You wins! ${playerSelection} beats ${computerSelection}`;
 
         } else {
@@ -54,12 +83,17 @@
             return 'Please select rock, paper, or scissors'
         }
 
+        if(playerScore === 5) {
+          return prompt('YOU WIN!');
+        }
+
+        if(computerScore === 5) {
+          return prompt('COMPUTER WINS!');
+        }
+
       }
 
-       const playerSelection = 'rock'
       
-      console.log(`Player selected "${playerSelection}" computer selected "${computerSelection}"`);
-      playRound(playerSelection, computerSelection)
       console.log(playRound(playerSelection, computerSelection));
     </script>
   </body>
