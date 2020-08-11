@@ -8,17 +8,20 @@
 
   <body>
     <script>    
-        //computer will choose random RPS
+        //computer will choose RPS at random
         let RPS = ["rock", "paper", "scissors"];
         const computerPlay = () => {
             return RPS[Math.floor(Math.random() * RPS.length)];
+            debugger;
         }
+        const computerSelection = computerPlay();
 
       const playRound = (playerSelection, computerSelection) => {
         // your code here!
-
+        
         if(playerSelection === computerSelection) {
             console.log('Draw');
+            return 'Draw';
 
         //computer wins rock vs paper
         } else if (computerSelection === 'paper' && playerSelection === 'rock') {
@@ -35,24 +38,28 @@
         //player wins
         } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
             console.log(`You wins! ${playerSelection} beats ${computerSelection}`);
+            return `You wins! ${playerSelection} beats ${computerSelection}`;
         
         //computer wins rock vs scissors
         } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
             console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
+            return `computer wins! ${computerSelection} beats ${playerSelection}`;
         
         // player wins
         } else if(playerSelection === 'rock' && computerSelection === 'scissors') {
             console.log(`You wins! ${playerSelection} beats ${computerSelection}`);
+            return `You wins! ${playerSelection} beats ${computerSelection}`;
+
         } else {
-            console.log('Please select rock, paper, scissors')
+            console.log('Please select rock, paper, or scissors')
+            return 'Please select rock, paper, or scissors'
         }
 
       }
 
-      const playerSelection = "paper";
-      const computerSelection = computerPlay();
+       const playerSelection = 'paper'
       
-      console.log(`Selections player ${playerSelection} computer ${computerSelection}`);
+      console.log(`Player selected "${playerSelection}" computer selected "${computerSelection}"`);
       console.log(playRound(playerSelection, computerSelection));
     </script>
   </body>
