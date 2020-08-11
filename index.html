@@ -17,12 +17,13 @@
         return RPS[Math.floor(Math.random() * RPS.length)];
       };
       const computerSelection = computerPlay();
+      
+      // Player choice. Prompt will pop up with a message.
+      const playerSelection = prompt("Rock, Paper, or Scissors?");
 
       const playRound = () => {
         // your code here!
 
-        // Player choice. Prompt will pop up with a message.
-        const playerSelection = prompt("Rock, Paper, or Scissors?");
 
         if (playerSelection === computerSelection) {
           console.log("Draw");
@@ -107,30 +108,13 @@
           console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
           return `You win! ${playerSelection} beats ${computerSelection}`;
-          
+
         } else {
           console.log("Please select rock, paper, or scissors");
           return "Please select rock, paper, or scissors";
         }
-
-
-              if(playerScore === 5) {
-              console.log('You Win!');
-              return 'You Win!';
-              }
-
-              if(computerScore === 5) {
-              console.log('Computer Wins!');
-              return 'Computer Wins!';
-              }
               
       };
-
-      playRound();
-      playRound();
-      playRound();
-      playRound();
-      playRound();
 
     </script>
   </body>
