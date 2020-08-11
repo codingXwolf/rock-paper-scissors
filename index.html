@@ -11,82 +11,126 @@
       let playerScore = 0;
       let computerScore = 0;
 
-        //computer will choose RPS at random
-        let RPS = ["rock", "paper", "scissors"];
-        const computerPlay = () => {
-            return RPS[Math.floor(Math.random() * RPS.length)];
-        }
-        const computerSelection = computerPlay();
-        const playerSelection = prompt('Rock, Paper, or Scissors?');
+      //computer will choose RPS at random
+      let RPS = ["rock", "paper", "scissors"];
+      const computerPlay = () => {
+        return RPS[Math.floor(Math.random() * RPS.length)];
+      };
+      const computerSelection = computerPlay();
 
-      const playRound = (playerSelection, computerSelection) => {
+      const playRound = () => {
         // your code here!
-        
-        if(playerSelection === computerSelection) {
-            console.log('Draw');
-            ++playerScore;
-            ++computerScore;
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            return 'Draw';
+        // Player choice. Prompt will pop up with a message.
+        const playerSelection = prompt("Rock, Paper, or Scissors?");
 
-        //computer wins rock vs paper
-        } else if (computerSelection === 'paper' && playerSelection === 'rock') {
-            ++computerScore;
-            console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+        if (playerSelection === computerSelection) {
+          console.log("Draw");
+          ++playerScore;
+          ++computerScore;
+          console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            return `computer wins! ${computerSelection} beats ${playerSelection}`;
+          return "Draw";
 
-        //player wins
-        } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-           ++playerScore;
+          //computer wins rock vs paper
+        } else if (
+          computerSelection === "paper" &&
+          playerSelection === "rock"
+        ) {
+          ++computerScore;
+          console.log(
+            `computer wins! ${computerSelection} beats ${playerSelection}`
+          );
+          console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+
+          return `computer wins! ${computerSelection} beats ${playerSelection}`;
+
+          //player wins
+        } else if (
+          playerSelection === "paper" &&
+          computerSelection === "rock"
+        ) {
+          ++playerScore;
           console.log(`You win! ${playerSelection} beats ${computerSelection}`);
           console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-           return `You win! ${playerSelection} beats ${computerSelection}`;
+          return `You win! ${playerSelection} beats ${computerSelection}`;
 
-        //computer wins paper vs scissors
-        } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-            ++computerScore;
-            console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+          //computer wins paper vs scissors
+        } else if (
+          computerSelection === "scissors" &&
+          playerSelection === "paper"
+        ) {
+          ++computerScore;
+          console.log(
+            `computer wins! ${computerSelection} beats ${playerSelection}`
+          );
+          console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            return `computer wins! ${computerSelection} beats ${playerSelection}`;
+          return `computer wins! ${computerSelection} beats ${playerSelection}`;
 
-        //player wins
-        } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-            ++playerScore;
-            console.log(`You wins! ${playerSelection} beats ${computerSelection}`);
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+          //player wins
+        } else if (
+          playerSelection === "scissors" &&
+          computerSelection === "paper"
+        ) {
+          ++playerScore;
+          console.log(
+            `You wins! ${playerSelection} beats ${computerSelection}`
+          );
+          console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            return `You win! ${playerSelection} beats ${computerSelection}`;
-        
-        //computer wins rock vs scissors
-        } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
-            ++computerScore;
-            console.log(`computer wins! ${computerSelection} beats ${playerSelection}`);
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+          return `You win! ${playerSelection} beats ${computerSelection}`;
 
-            return `computer wins! ${computerSelection} beats ${playerSelection}`;
-        
-        // player wins
-        } else if(playerSelection === 'rock' && computerSelection === 'scissors') {
-            ++playerScore;
-            console.log(`You wins! ${playerSelection} beats ${computerSelection}`);
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+          //computer wins rock vs scissors
+        } else if (
+          computerSelection === "rock" &&
+          playerSelection === "scissors"
+        ) {
+          ++computerScore;
+          console.log(
+            `computer wins! ${computerSelection} beats ${playerSelection}`
+          );
+          console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            return `You win! ${playerSelection} beats ${computerSelection}`;
+          return `computer wins! ${computerSelection} beats ${playerSelection}`;
 
+          // player wins
+        } else if (
+          playerSelection === "rock" &&
+          computerSelection === "scissors"
+        ) {
+          ++playerScore;
+          console.log(
+            `You win! ${playerSelection} beats ${computerSelection}`
+          );
+          console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+
+          return `You win! ${playerSelection} beats ${computerSelection}`;
+          
         } else {
-            console.log('Please select rock, paper, or scissors')
-            return 'Please select rock, paper, or scissors'
+          console.log("Please select rock, paper, or scissors");
+          return "Please select rock, paper, or scissors";
         }
 
-      }
-      
 
-      console.log(playRound(playerSelection, computerSelection));
+              if(playerScore === 5) {
+              console.log('You Win!');
+              return 'You Win!';
+              }
+
+              if(computerScore === 5) {
+              console.log('Computer Wins!');
+              return 'Computer Wins!';
+              }
+              
+      };
+
+      playRound();
+      playRound();
+      playRound();
+      playRound();
+      playRound();
 
     </script>
   </body>
