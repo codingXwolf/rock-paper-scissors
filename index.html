@@ -13,6 +13,9 @@
     let computerScore = 0;
     let round = 0;
 
+    const playRound = () => {
+      // your code here!
+
     //computer will choose RPS at random
     let RPS = ["rock", "paper", "scissors"];
     const computerPlay = () => {
@@ -23,10 +26,8 @@
     // Player choice. Prompt will pop up with a message.
     const playerSelection = prompt("Rock, Paper, or Scissors?");
 
-    const playRound = () => {
-      // your code here!
-
-
+      // player vs computer win loose logic
+      // add scores and rounds
       if (playerSelection === computerSelection) {
         console.log("Draw");
         ++playerScore;
@@ -128,19 +129,16 @@
       if (round >= 5) {
         if (playerScore > computerScore) {
           console.log(`You Win! Final scores = Player: ${playerScore} Computer: ${computerScore}`);
+
         } else if (computerScore > playerScore) {
           console.log(`Computer Wins! Final scores = Computer: ${computerScore} Player: ${playerScore}`)
+
         } else {
           console.log(`Game is a tie! Final score = Player: ${playerScore} Computer: ${computerScore}`);
         }
       }
     };
 
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    playRound();
 
   </script>
 </body>
