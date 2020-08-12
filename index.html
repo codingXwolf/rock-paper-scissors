@@ -13,18 +13,36 @@
     let computerScore = 0;
     let round = 0;
 
+    const getWinner = () => {
+      if (playerScore > computerScore) {
+        console.log(`You Win! Final scores = Player: ${playerScore} Computer: ${computerScore}`);
+
+      } else if (playerScore < computerScore) {
+        console.log(`Computer Wins! Final scores = Computer: ${computerScore}
+          Player: ${playerScore}`)
+      } else {
+        console.log(`Game is a tie! Final scores = Player: ${playerScore} Computer:
+          ${computerScore}`);
+      }
+    }
+
     const playRound = () => {
       // your code here!
 
-    //computer will choose RPS at random
-    let RPS = ["rock", "paper", "scissors"];
-    const computerPlay = () => {
-      return RPS[Math.floor(Math.random() * RPS.length)];
-    };
-    const computerSelection = computerPlay();
+      // Get winner
+      if (round === 6) {
+        getWinner();
+      } 
 
-    // Player choice. Prompt will pop up with a message.
-    const playerSelection = prompt("Rock, Paper, or Scissors?");
+      //computer will choose RPS at random
+      let RPS = ["rock", "paper", "scissors"];
+      const computerPlay = () => {
+        return RPS[Math.floor(Math.random() * RPS.length)];
+      };
+      const computerSelection = computerPlay();
+
+      // Player choice. Prompt will pop up with a message.
+      const playerSelection = prompt("Rock, Paper, or Scissors?");
 
       // player vs computer win loose logic
       // add scores and rounds
@@ -124,22 +142,7 @@
         return "Please select rock, paper, or scissors";
       }
 
-
-      // Get winner
-      if (round >= 5) {
-        if (playerScore > computerScore) {
-          console.log(`You Win! Final scores = Player: ${playerScore} Computer: ${computerScore}`);
-
-        } else if (computerScore > playerScore) {
-          console.log(`Computer Wins! Final scores = Computer: ${computerScore} Player: ${playerScore}`)
-
-        } else {
-          console.log(`Game is a tie! Final score = Player: ${playerScore} Computer: ${computerScore}`);
-        }
-      }
     };
-
-
   </script>
 </body>
 
