@@ -1,6 +1,6 @@
     let playerScore = 0;
     let computerScore = 0;
-    let round = 1;
+    let round = 0;
 
 
     const playRound = () => {
@@ -110,7 +110,7 @@
       }
 
       // Get winner
-      if (round == 5) {
+      if (round == 4) {
         if (playerScore > computerScore) {
         console.log(`You Win! Final scores = Player: ${playerScore} Computer: ${computerScore}`);
 
