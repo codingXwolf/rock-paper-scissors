@@ -1,0 +1,40 @@
+header {
+    text-align: center;
+}
+
+#RPS {
+    text-align: center;
+
+}
+
+input {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+input:hover {
+    background-color: #555555;
+    color: white;
+}
+
+#computerSelection {
+    position: relative;
+    right: -12em;
+}
+
+#scoreBoard {
+    text-align: center;
+    background-color: lightgray;
+    overflow: hidden;
+}
+
+#playerScore {
+    float: left;
+    
+}
+
+#computerScore {
+    float: right;
+}
+
