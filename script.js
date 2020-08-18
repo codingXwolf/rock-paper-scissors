@@ -1,5 +1,5 @@
-    let playerScore = 0;
-    let computerScore = 0;
+    let playerScore = document.getElementsByClassName('scoreP')[0].innerHTML = 0;
+    let computerScore = document.getElementsByClassName('scoreC')[0].innerHTML = 0;
     let round = 0;
 
 
@@ -22,8 +22,8 @@
       // add scores and rounds
       if (playerSelection === computerSelection) {
         console.log("Draw");
-        playerScore++;
-        computerScore++;
+        document.getElementsByClassName('scoreP')[0].innerHTML++
+        document.getElementsByClassName('scoreC')[0].innerHTML++
         console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
         //return "Draw";
@@ -33,7 +33,7 @@
         computerSelection === "paper" &&
         playerSelection === "rock"
       ) {
-        computerScore++;
+        document.getElementsByClassName('scoreC')[0].innerHTML++
         console.log(
           `computer wins! ${computerSelection} beats ${playerSelection}`
         );
@@ -46,7 +46,7 @@
         playerSelection === "paper" &&
         computerSelection === "rock"
       ) {
-        playerScore++;
+        document.getElementsByClassName('scoreP')[0].innerHTML++
         console.log(`You win! ${playerSelection} beats ${computerSelection}`);
         console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
@@ -57,7 +57,7 @@
         computerSelection === "scissors" &&
         playerSelection === "paper"
       ) {
-        computerScore++;
+        document.getElementsByClassName('scoreC')[0].innerHTML++
         console.log(
           `computer wins! ${computerSelection} beats ${playerSelection}`
         );
@@ -70,7 +70,7 @@
         playerSelection === "scissors" &&
         computerSelection === "paper"
       ) {
-        playerScore++;
+        document.getElementsByClassName('scoreP')[0].innerHTML++
         console.log(
           `You wins! ${playerSelection} beats ${computerSelection}`
         );
@@ -83,7 +83,7 @@
         computerSelection === "rock" &&
         playerSelection === "scissors"
       ) {
-        computerScore++;
+        document.getElementsByClassName('scoreC')[0].innerHTML++
         console.log(
           `computer wins! ${computerSelection} beats ${playerSelection}`
         );
@@ -96,7 +96,7 @@
         playerSelection === "rock" &&
         computerSelection === "scissors"
       ) {
-        playerScore++;
+        document.getElementsByClassName('scoreP')[0].innerHTML++
         console.log(
           `You win! ${playerSelection} beats ${computerSelection}`
         );
