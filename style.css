@@ -19,27 +19,45 @@ input:hover {
     color: white;
 }
 
-#computerSelection {
+#computerHeader {
     position: relative;
-    right: -12em;
 }
 
 #scoreBoard {
-    background-color: lightgray;
-    overflow: hidden;
+    display: block;
+    margin: 10vh auto 0 auto;
+    background-color: #ddd;
     width: 200px;
+    height: 150px;
+    border-radius: 5%;
 }
 
 h3 {
     text-align: center;
 }
 
-#playerScore {
+.player-score-title {
     float: left;
     
 }
 
-#computerScore {
+.computer-score-title {
     float: right;
 }
+
+.scoreP {
+    float: left;
+    left: -30px;
+    font-size: 3em;
+    position: relative;
+}
+
+.scoreC{
+    float: right;
+    bottom: -0px;
+    right: -45px;
+    font-size: 3em;
+    position: relative;
+}
+
 
