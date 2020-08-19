@@ -21,10 +21,9 @@
         //computer will choose RPS at random
         let RPS = ["rock", "paper", "scissors"];
         const computerPlay = () => {
-            let randomSelection = RPS[Math.floor(Math.random() * RPS.length)];
-            computerSelected.innerHTML = randomSelection;
-            
-            return randomSelection;
+            computerSelected.innerHTML = RPS[Math.floor(Math.random() * RPS.length)];
+
+            return RPS[Math.floor(Math.random() * RPS.length)];
         };
         const computerSelection = computerPlay();
 
