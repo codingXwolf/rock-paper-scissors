@@ -17,6 +17,14 @@
         playRound(playerInput);
     }
 
+    //Restart Game
+    const restartGame = () => {
+        playerScore.innerHTML = 0;
+        computerScore.innerHTML = 0;
+        scoreBoardMessage.innerHTML = '...'
+        round.innerHTML = +1;
+    }
+
     const playRound = (playerSelection) => {
         // your code here!
 
