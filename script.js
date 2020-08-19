@@ -10,10 +10,14 @@
 
     // rounds 
     let round = document.getElementById('roundScore');
-    round.innerHTML = + 1
+    round.innerHTML = +1
 
+    // Player choice. Prompt will pop up with a message.
+    const getPlayerSelection = (playerInput) => {
+        playRound(playerInput);
+    }
 
-    const playRound = () => {
+    const playRound = (playerSelection) => {
         // your code here!
 
         round.innerHTML++
@@ -26,9 +30,6 @@
             return RPS[Math.floor(Math.random() * RPS.length)];
         };
         const computerSelection = computerPlay();
-
-        // Player choice. Prompt will pop up with a message.
-        const playerSelection = prompt("Rock, Paper, or Scissors?");
 
         // player vs computer win loose logic
         // add scores and rounds
@@ -53,7 +54,7 @@
         ) {
             document.getElementsByClassName('scoreP')[0].innerHTML++
 
-            scoreBoardMessage.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.` 
+            scoreBoardMessage.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`
 
             //computer wins paper vs scissors
         } else if (
@@ -100,10 +101,10 @@
                 scoreBoardMessage.innerHTML = `You Win! Final scores - Player: ${playerScore} Computer: ${computerScore}`;
 
             } else if (playerScore < computerScore) {
-            scoreBoardMessage.innerHTML = `Computer Wins! Final scores - Computer:
+                scoreBoardMessage.innerHTML = `Computer Wins! Final scores - Computer:
               ${computerScore} Player: ${playerScore}`;
 
-            } else if(playerScore === computerScore){
+            } else if (playerScore === computerScore) {
                 scoreBoardMessage.innerHTML = `Game is a tie! Final scores - Player:
               ${playerScore} Computer: ${computerScore}`;
 
