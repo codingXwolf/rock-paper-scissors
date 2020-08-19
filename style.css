@@ -36,6 +36,13 @@ h3 {
     text-align: center;
 }
 
+#computerSelected {
+    text-align: center;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+}
+
 .player-score-title {
     float: left;
     

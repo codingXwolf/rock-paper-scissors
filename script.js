@@ -5,6 +5,9 @@
     //Game Message
     let scoreBoardMessage = document.getElementById('gameMessage');
 
+    //Computer Selected
+    let computerSelected = document.getElementById('computerSelected');
+
     // rounds 
     let round = document.getElementById('roundScore');
     round.innerHTML = + 1
@@ -18,7 +21,10 @@
         //computer will choose RPS at random
         let RPS = ["rock", "paper", "scissors"];
         const computerPlay = () => {
-            return RPS[Math.floor(Math.random() * RPS.length)];
+            let randomSelection = RPS[Math.floor(Math.random() * RPS.length)];
+            computerSelected.innerHTML = randomSelection;
+            
+            return randomSelection;
         };
         const computerSelection = computerPlay();
 
