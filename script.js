@@ -2,6 +2,9 @@
     let playerScore = document.getElementsByClassName('scoreP')[0].innerHTML = 0;
     let computerScore = document.getElementsByClassName('scoreC')[0].innerHTML = 0;
 
+    //Game Message
+    let scoreBoardMessage = document.getElementById('gameMessage');
+
     // rounds 
     let round = document.getElementById('roundScore');
     round.innerHTML = + 1
@@ -11,7 +14,6 @@
         // your code here!
 
         round.innerHTML++
-        // console.log(`Current Round: ${round}`);
 
         //computer will choose RPS at random
         let RPS = ["rock", "paper", "scissors"];
@@ -26,12 +28,9 @@
         // player vs computer win loose logic
         // add scores and rounds
         if (playerSelection === computerSelection) {
-            console.log("Draw");
+            scoreBoardMessage.innerHTML = "Draw!";
             document.getElementsByClassName('scoreP')[0].innerHTML++
             document.getElementsByClassName('scoreC')[0].innerHTML++
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
-
-            //return "Draw";
 
             //computer wins rock vs paper
         } else if (
@@ -39,12 +38,8 @@
             playerSelection === "rock"
         ) {
             document.getElementsByClassName('scoreC')[0].innerHTML++
-            console.log(
-                `computer wins! ${computerSelection} beats ${playerSelection}`
-            );
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            //return `computer wins! ${computerSelection} beats ${playerSelection}`;
+            scoreBoardMessage.innerHTML = `computer wins! ${computerSelection} beats ${playerSelection}.`
 
             //player wins
         } else if (
@@ -52,10 +47,8 @@
             computerSelection === "rock"
         ) {
             document.getElementsByClassName('scoreP')[0].innerHTML++
-            console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            return `You win! ${playerSelection} beats ${computerSelection}`;
+            scoreBoardMessage.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.` 
 
             //computer wins paper vs scissors
         } else if (
@@ -63,12 +56,8 @@
             playerSelection === "paper"
         ) {
             document.getElementsByClassName('scoreC')[0].innerHTML++
-            console.log(
-                `computer wins! ${computerSelection} beats ${playerSelection}`
-            );
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            //return `computer wins! ${computerSelection} beats ${playerSelection}`;
+            scoreBoardMessage.innerHTML = `Computer wins! ${computerSelection} beats ${playerSelection}.`
 
             //player wins
         } else if (
@@ -76,12 +65,8 @@
             computerSelection === "paper"
         ) {
             document.getElementsByClassName('scoreP')[0].innerHTML++
-            console.log(
-                `You wins! ${playerSelection} beats ${computerSelection}`
-            );
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            // return `You win! ${playerSelection} beats ${computerSelection}`;
+            scoreBoardMessage.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`
 
             //computer wins rock vs scissors
         } else if (
@@ -89,12 +74,8 @@
             playerSelection === "scissors"
         ) {
             document.getElementsByClassName('scoreC')[0].innerHTML++
-            console.log(
-                `computer wins! ${computerSelection} beats ${playerSelection}`
-            );
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            // return `computer wins! ${computerSelection} beats ${playerSelection}`;
+            scoreBoardMessage.innerHTML = `Computer wins! ${computerSelection} beats ${playerSelection}.`
 
             // player wins
         } else if (
@@ -102,31 +83,25 @@
             computerSelection === "scissors"
         ) {
             document.getElementsByClassName('scoreP')[0].innerHTML++
-            console.log(
-                `You win! ${playerSelection} beats ${computerSelection}`
-            );
-            console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
-            //eturn `You win! ${playerSelection} beats ${computerSelection}`;
-
+            scoreBoardMessage.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`
         } else {
-            console.log("Please select rock, paper, or scissors");
-            return "Please select rock, paper, or scissors";
+            scoreBoardMessage.innerHTML = "Please select rock, paper, or scissors";
         }
 
         // Get winner
         if (round.innerHTML == 5) {
             if (playerScore > computerScore) {
-                console.log(`You Win! Final scores = Player: ${playerScore} Computer: ${computerScore}`);
+                scoreBoardMessage.innerHTML = `You Win! Final scores - Player: ${playerScore} Computer: ${computerScore}`;
 
             } else if (playerScore < computerScore) {
-                console.log(`Computer Wins! Final scores=Computer:
-              ${computerScore} Player: ${playerScore}`);
+            scoreBoardMessage.innerHTML = `Computer Wins! Final scores - Computer:
+              ${computerScore} Player: ${playerScore}`;
 
             } else if(playerScore === computerScore){
-                console.log(`Game is a tie! Final scores=Player:
-              ${playerScore} Computer: ${computerScore}`);
-              
+                scoreBoardMessage.innerHTML = `Game is a tie! Final scores - Player:
+              ${playerScore} Computer: ${computerScore}`;
+
             } else {
                 ''
             }
