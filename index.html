@@ -13,9 +13,9 @@
   <h1>Rock Paper Scissors Game</h1>
   <div id="RPS">
     <h4>Player Select:</h4>
-    <input id="rock" onClick='getPlayerSelection(this.value)' class="rps-class" type="button" value="rock">
-    <input id="paper" onClick='getPlayerSelection(this.value)' class="rps-class" type="button" value="paper">
-    <input id="scissors" onClick='getPlayerSelection(this.value)' class="rps-class" type="button" value="scissors">
+    <input id="rock" onClick='playRound(this.value)' class="rps-class" type="button" value="rock">
+    <input id="paper" onClick='playRound(this.value)' class="rps-class" type="button" value="paper">
+    <input id="scissors" onClick='playRound(this.value)' class="rps-class" type="button" value="scissors">
   </div>
   <hr>
 
@@ -36,7 +36,7 @@
 
   <h3 id="gameMessage">...</h3>
 
-  <input type="button" onClick="restartGame()" value="restart">
+  <input type="button" id="restartGameButton" onClick="restartGame()" value="restart">
 
 </body>
 
