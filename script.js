@@ -29,26 +29,27 @@
 
     const playRound = (playerSelection) => {
         // your code here!
-
+        scoreBoardMessage.innerHTML = "...";
         round.innerHTML++
 
         //computer will choose RPS at random
         let RPS = ["rock", "paper", "scissors"];
         const computerPlay = () => {
-            computerSelected.innerHTML = RPS[Math.floor(Math.random() * RPS.length)];
-
             return RPS[Math.floor(Math.random() * RPS.length)];
         };
         const computerSelection = computerPlay();
 
+        //Displays the right computer selection
+        computerSelected.innerHTML = computerSelection;
+        
         // player vs computer win loose logic
         // add scores and rounds
         if (playerSelection === computerSelection) {
-            scoreBoardMessage.innerHTML = "Draw!";
-
+            
             document.getElementsByClassName('scoreP')[0].innerHTML++
             document.getElementsByClassName('scoreC')[0].innerHTML++
-
+            
+            scoreBoardMessage.innerHTML = "Draw!";
             //computer wins rock vs paper
         } else if (
             computerSelection === "paper" &&
@@ -108,7 +109,8 @@
         }
 
         // Get winner
-        if (round.innerHTML == 5) {
+        if (round.innerHTML === 5) {
+            debugger;
 
             if (playerScore > computerScore) {
                 scoreBoardMessage.innerHTML = `You Win! Final scores - Player: ${playerScore} Computer: ${computerScore}`;
