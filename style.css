@@ -56,14 +56,14 @@ hr {
     float: right;
 }
 
-.scoreP {
+#scoreP {
     float: left;
     left: -30px;
     font-size: 3em;
     position: relative;
 }
 
-.scoreC{
+#scoreC{
     float: right;
     bottom: -0px;
     right: -45px;
