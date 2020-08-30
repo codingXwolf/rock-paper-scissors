@@ -1,6 +1,6 @@
 // player and computer scores
-let playerScore = document.getElementById("scoreP").innerHTML = 0;
-let computerScore = document.getElementById("scoreC").innerHTML = 0;
+let playerScore = (document.getElementById("scoreP").innerHTML = 0);
+let computerScore = (document.getElementById("scoreC").innerHTML = 0);
 
 //Game Message
 let scoreBoardMessage = document.getElementById("gameMessage");
@@ -27,6 +27,9 @@ const restartGame = () => {
   scoreBoardMessage.innerHTML = "...";
   computerSelected.innerHTML = "";
   round.innerHTML = 0;
+  document.getElementById("rock").disabled = false;
+  document.getElementById("paper").disabled = false;
+  document.getElementById("scissors").disabled = false;
 };
 
 // Get winner
@@ -120,30 +123,30 @@ const playRound = (playerSelection) => {
     scoreBoardMessage.innerHTML = "Please select rock, paper, or scissors";
   }
 
-    if (+round.innerHTML === 5) {
+  if (+round.innerHTML === 5) {
     restartButton.style.display = "";
-      if (playerScore > computerScore) {
-        scoreBoardMessage.innerHTML = `You Win! Final scores - Player: ${playerScore} Computer: ${computerScore}`;
-        restartButton.disabled = false;
-        document.getElementById("rock").disabled = true;
-        document.getElementById("paper").disabled = true;
-        document.getElementById("scissors").disabled = true;
-      } else if (playerScore < computerScore) {
-        scoreBoardMessage.innerHTML = `Computer Wins! Final scores - Computer:
+    if (playerScore > computerScore) {
+      scoreBoardMessage.innerHTML = `You Win! Final scores - Player: ${playerScore} Computer: ${computerScore}`;
+      restartButton.disabled = false;
+      document.getElementById("rock").disabled = true;
+      document.getElementById("paper").disabled = true;
+      document.getElementById("scissors").disabled = true;
+    } else if (playerScore < computerScore) {
+      scoreBoardMessage.innerHTML = `Computer Wins! Final scores - Computer:
               ${computerScore} Player: ${playerScore}`;
-        restartButton.disabled = false;
-        document.getElementById("rock").disabled = true;
-        document.getElementById("paper").disabled = true;
-        document.getElementById("scissors").disabled = true;
-      } else if (playerScore === computerScore) {
-        scoreBoardMessage.innerHTML = `Game is a tie! Final scores - Player:
+      restartButton.disabled = false;
+      document.getElementById("rock").disabled = true;
+      document.getElementById("paper").disabled = true;
+      document.getElementById("scissors").disabled = true;
+    } else if (playerScore === computerScore) {
+      scoreBoardMessage.innerHTML = `Game is a tie! Final scores - Player:
               ${playerScore} Computer: ${computerScore}`;
-        restartButton.disabled = false;
-        document.getElementById("rock").disabled = true;
-        document.getElementById("paper").disabled = true;
-        document.getElementById("scissors").disabled = true;
-      } else {
-        ("");
-      }
+      restartButton.disabled = false;
+      document.getElementById("rock").disabled = true;
+      document.getElementById("paper").disabled = true;
+      document.getElementById("scissors").disabled = true;
+    } else {
+      ("");
     }
+  }
 };
