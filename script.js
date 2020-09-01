@@ -1,6 +1,7 @@
 // player and computer scores
-let playerScore = (document.getElementById("scoreP").innerHTML = 0);
-let computerScore = (document.getElementById("scoreC").innerHTML = 0);
+let playerScore = document.getElementById("scoreP").innerHTML = 0;
+let computerScore = document.getElementById("scoreC").innerHTML = 0;
+
 
 //Game Message
 let scoreBoardMessage = document.getElementById("gameMessage");
@@ -13,7 +14,7 @@ let round = document.getElementById("roundScore");
 round.innerHTML = 0;
 
 //RPS Buttons
-let RPSButton = (document.getElementsByClassName("rps-class").disabled = false);
+let RPSButton = document.getElementsByClassName("rps-class").disabled = false;
 
 //Restart Button
 let restartButton = document.getElementById("restartGameButton");
@@ -49,6 +50,7 @@ const checkWinner = () => {
   if (+round.innerHTML === 5) {
     restartButton.style.display = "";
     if (playerScore > computerScore) {
+        debugger;
       scoreBoardMessage.innerHTML = `You Win! Final scores - Player: ${playerScore} Computer: ${computerScore}`;
       restartButton.disabled = false;
       RPSButtonsOff();
@@ -58,6 +60,7 @@ const checkWinner = () => {
       restartButton.disabled = false;
       RPSButtonsOff();
     } else if (playerScore === computerScore) {
+        debugger;
       scoreBoardMessage.innerHTML = `Game is a tie! Final scores - Player:
               ${playerScore} Computer: ${computerScore}`;
       restartButton.disabled = false;
@@ -67,9 +70,8 @@ const checkWinner = () => {
 };
 
 const playRound = (playerSelection) => {
-  // your code here!
   round.innerHTML++;
-  //checkWinner();
+
   scoreBoardMessage.innerHTML = "...";
 
   //computer will choose RPS at random
@@ -81,7 +83,7 @@ const playRound = (playerSelection) => {
 
   //Displays the right computer selection
   computerSelected.innerHTML = computerSelection;
-
+debugger;
   // player vs computer win loose logic
   // add scores and rounds
   if (playerSelection === computerSelection) {
@@ -92,40 +94,41 @@ const playRound = (playerSelection) => {
     //computer wins rock vs paper
   } else if (computerSelection === "paper" && playerSelection === "rock") {
     scoreBoardMessage.innerHTML = `computer wins! ${computerSelection} beats ${playerSelection}.`;
-    document.getElementById("scoreC").innerHTML++;
+    computerScore.innerHTML++
 
     //player wins
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     scoreBoardMessage.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`;
 
-    document.getElementById("scoreP").innerHTML++;
+    playerScore.innerHTML++
 
     //computer wins paper vs scissors
   } else if (computerSelection === "scissors" && playerSelection === "paper") {
     scoreBoardMessage.innerHTML = `Computer wins! ${computerSelection} beats ${playerSelection}.`;
 
-    document.getElementById("scoreC").innerHTML++;
+    computerScore.innerHTML++
 
     //player wins
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     scoreBoardMessage.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`;
 
-    document.getElementById("scoreP").innerHTML++;
+    playerScore.innerHTML++
 
     //computer wins rock vs scissors
   } else if (computerSelection === "rock" && playerSelection === "scissors") {
     scoreBoardMessage.innerHTML = `Computer wins! ${computerSelection} beats ${playerSelection}.`;
 
-    document.getElementById("scoreC").innerHTML++;
+    computerScore.innerHTML++
 
     // player wins
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     scoreBoardMessage.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`;
 
-    document.getElementById("scoreP").innerHTML++;
+    playerScore.innerHTML++
   } else {
     scoreBoardMessage.innerHTML = "Please select rock, paper, or scissors";
   }
-
-  checkWinner();
+console.log("Player:", playerScore);
+console.log("Computer:", computerScore);
+    checkWinner();
 };
