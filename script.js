@@ -128,30 +128,4 @@ const playRound = (playerSelection) => {
   }
 
   checkWinner();
-  //   if (+round.innerHTML === 5) {
-  //     restartButton.style.display = "";
-  //     if (playerScore > computerScore) {
-  //       scoreBoardMessage.innerHTML = `You Win! Final scores - Player: ${playerScore} Computer: ${computerScore}`;
-  //       restartButton.disabled = false;
-  //       document.getElementById("rock").disabled = true;
-  //       document.getElementById("paper").disabled = true;
-  //       document.getElementById("scissors").disabled = true;
-  //     } else if (playerScore < computerScore) {
-  //       scoreBoardMessage.innerHTML = `Computer Wins! Final scores - Computer:
-  //               ${computerScore} Player: ${playerScore}`;
-  //       restartButton.disabled = false;
-  //       document.getElementById("rock").disabled = true;
-  //       document.getElementById("paper").disabled = true;
-  //       document.getElementById("scissors").disabled = true;
-  //     } else if (playerScore === computerScore) {
-  //       scoreBoardMessage.innerHTML = `Game is a tie! Final scores - Player:
-  //               ${playerScore} Computer: ${computerScore}`;
-  //       restartButton.disabled = false;
-  //       document.getElementById("rock").disabled = true;
-  //       document.getElementById("paper").disabled = true;
-  //       document.getElementById("scissors").disabled = true;
-  //     } else {
-  //       ("");
-  //     }
-  //   }
 };
