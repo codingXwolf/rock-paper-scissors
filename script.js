@@ -1,6 +1,9 @@
 // player and computer scores
-let playerScore = document.getElementById("scoreP").innerHTML = 0;
-let computerScore = document.getElementById("scoreC").innerHTML = 0;
+let playerScore = document.getElementById("scoreP");
+playerScore.innerHTML = 0;
+
+let computerScore = document.getElementById("scoreC");
+computerScore.innerHTML = 0;
 
 
 //Game Message
@@ -47,8 +50,13 @@ const restartGame = () => {
 
 //Get winner
 const checkWinner = () => {
-  if (+round.innerHTML === 5) {
+    
+    if (+round.innerHTML === 5) {
+        playerScore = +playerScore.innerHTML;
+        computerScore = +computerScore.innerHTML;
+      debugger;
     restartButton.style.display = "";
+    console.log(`checkWinner - Player${playerScore} Computer: ${computerScore}`);
     if (playerScore > computerScore) {
         debugger;
       scoreBoardMessage.innerHTML = `You Win! Final scores - Player: ${playerScore} Computer: ${computerScore}`;
@@ -83,12 +91,12 @@ const playRound = (playerSelection) => {
 
   //Displays the right computer selection
   computerSelected.innerHTML = computerSelection;
-debugger;
+
   // player vs computer win loose logic
   // add scores and rounds
   if (playerSelection === computerSelection) {
-    // document.getElementById("scoreP").innerHTML++;
-    // document.getElementById("scoreC").innerHTML++;
+    playerScore.innerHTML++;
+    computerScore.innerHTML++;
 
     scoreBoardMessage.innerHTML = "Draw!";
     //computer wins rock vs paper
