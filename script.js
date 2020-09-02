@@ -5,6 +5,7 @@ playerScore.innerHTML = 0;
 let computerScore = document.getElementById("scoreC");
 computerScore.innerHTML = 0;
 
+console.log(playerScore, computerScore)
 
 //Game Message
 let scoreBoardMessage = document.getElementById("gameMessage");
@@ -15,9 +16,6 @@ let computerSelected = document.getElementById("computerSelected");
 // rounds
 let round = document.getElementById("roundScore");
 round.innerHTML = 0;
-
-//RPS Buttons
-let RPSButton = document.getElementsByClassName("rps-class").disabled = false;
 
 //Restart Button
 let restartButton = document.getElementById("restartGameButton");
@@ -40,12 +38,18 @@ const RPSButtonsOn = () => {
 
 //Restart Game
 const restartGame = () => {
-  document.getElementById("scoreP").innerHTML = 0;
-  document.getElementById("scoreC").innerHTML = 0;
-  scoreBoardMessage.innerHTML = "...";
-  computerSelected.innerHTML = "";
+    debugger;
   round.innerHTML = 0;
-  RPSButtonsOff();
+  //Not sure why its not changing score to 0 using playerScore/computerScore.innerHTML = 0;
+  document.getElementById("scoreP").innerHTML = 0;
+  playerScore = 0;
+  document.getElementById("scoreC").innerHTML = 0;
+  computerScore = 0;
+  console.log(playerScore, computerScore)
+  scoreBoardMessage.innerHTML = "...";
+  computerSelected.innerHTML = " ";
+  RPSButtonsOn();
+  restartButton.style.display = 'none'
 };
 
 //Get winner
@@ -54,11 +58,11 @@ const checkWinner = () => {
     if (+round.innerHTML === 5) {
         playerScore = +playerScore.innerHTML;
         computerScore = +computerScore.innerHTML;
-      debugger;
+      
     restartButton.style.display = "";
     console.log(`checkWinner - Player${playerScore} Computer: ${computerScore}`);
     if (playerScore > computerScore) {
-        debugger;
+       
       scoreBoardMessage.innerHTML = `You Win! Final scores - Player: ${playerScore} Computer: ${computerScore}`;
       restartButton.disabled = false;
       RPSButtonsOff();
@@ -68,7 +72,7 @@ const checkWinner = () => {
       restartButton.disabled = false;
       RPSButtonsOff();
     } else if (playerScore === computerScore) {
-        debugger;
+        
       scoreBoardMessage.innerHTML = `Game is a tie! Final scores - Player:
               ${playerScore} Computer: ${computerScore}`;
       restartButton.disabled = false;
