@@ -5,8 +5,6 @@ playerScore.innerHTML = 0;
 let computerScore = document.getElementById("scoreC");
 computerScore.innerHTML = 0;
 
-console.log(playerScore, computerScore)
-
 //Game Message
 let scoreBoardMessage = document.getElementById("gameMessage");
 
@@ -38,31 +36,27 @@ const RPSButtonsOn = () => {
 
 //Restart Game
 const restartGame = () => {
-    debugger;
   round.innerHTML = 0;
   //Not sure why its not changing score to 0 using playerScore/computerScore.innerHTML = 0;
   document.getElementById("scoreP").innerHTML = 0;
   playerScore = 0;
   document.getElementById("scoreC").innerHTML = 0;
   computerScore = 0;
-  console.log(playerScore, computerScore)
   scoreBoardMessage.innerHTML = "...";
   computerSelected.innerHTML = " ";
   RPSButtonsOn();
-  restartButton.style.display = 'none'
+  restartButton.style.display = "none";
 };
 
 //Get winner
 const checkWinner = () => {
-    
-    if (+round.innerHTML === 5) {
-        playerScore = +playerScore.innerHTML;
-        computerScore = +computerScore.innerHTML;
-      
+  if (+round.innerHTML === 5) {
+    playerScore = +playerScore.innerHTML;
+    computerScore = +computerScore.innerHTML;
+
     restartButton.style.display = "";
-    console.log(`checkWinner - Player${playerScore} Computer: ${computerScore}`);
+
     if (playerScore > computerScore) {
-       
       scoreBoardMessage.innerHTML = `You Win! Final scores - Player: ${playerScore} Computer: ${computerScore}`;
       restartButton.disabled = false;
       RPSButtonsOff();
@@ -72,7 +66,6 @@ const checkWinner = () => {
       restartButton.disabled = false;
       RPSButtonsOff();
     } else if (playerScore === computerScore) {
-        
       scoreBoardMessage.innerHTML = `Game is a tie! Final scores - Player:
               ${playerScore} Computer: ${computerScore}`;
       restartButton.disabled = false;
@@ -106,41 +99,40 @@ const playRound = (playerSelection) => {
     //computer wins rock vs paper
   } else if (computerSelection === "paper" && playerSelection === "rock") {
     scoreBoardMessage.innerHTML = `computer wins! ${computerSelection} beats ${playerSelection}.`;
-    computerScore.innerHTML++
+    computerScore.innerHTML++;
 
     //player wins
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     scoreBoardMessage.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`;
 
-    playerScore.innerHTML++
+    playerScore.innerHTML++;
 
     //computer wins paper vs scissors
   } else if (computerSelection === "scissors" && playerSelection === "paper") {
     scoreBoardMessage.innerHTML = `Computer wins! ${computerSelection} beats ${playerSelection}.`;
 
-    computerScore.innerHTML++
+    computerScore.innerHTML++;
 
     //player wins
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     scoreBoardMessage.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`;
 
-    playerScore.innerHTML++
+    playerScore.innerHTML++;
 
     //computer wins rock vs scissors
   } else if (computerSelection === "rock" && playerSelection === "scissors") {
     scoreBoardMessage.innerHTML = `Computer wins! ${computerSelection} beats ${playerSelection}.`;
 
-    computerScore.innerHTML++
+    computerScore.innerHTML++;
 
     // player wins
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     scoreBoardMessage.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`;
 
-    playerScore.innerHTML++
+    playerScore.innerHTML++;
   } else {
     scoreBoardMessage.innerHTML = "Please select rock, paper, or scissors";
   }
-console.log("Player:", playerScore);
-console.log("Computer:", computerScore);
-    checkWinner();
+
+  checkWinner();
 };
