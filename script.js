@@ -37,15 +37,17 @@ const RPSButtonsOn = () => {
 //Restart Game
 const restartGame = () => {
   round.innerHTML = 0;
-  //Not sure why its not changing score to 0 using playerScore/computerScore.innerHTML = 0;
-  document.getElementById("scoreP").innerHTML = 0;
-  playerScore = 0;
-  document.getElementById("scoreC").innerHTML = 0;
-  computerScore = 0;
   scoreBoardMessage.innerHTML = "...";
   computerSelected.innerHTML = " ";
   RPSButtonsOn();
   restartButton.style.display = "none";
+
+  location.reload();
+// After pressing restart button, scores go back to zero but will not increment. Reloading page as temporary solution.
+//   document.getElementById("scoreP").innerHTML = 0;
+//   playerScore = 0;
+//   document.getElementById("scoreC").innerHTML = 0;
+//   computerScore = 0;
 };
 
 //Get winner
